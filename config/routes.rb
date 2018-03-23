@@ -10,9 +10,12 @@ Rails.application.routes.draw do
   get "/signup" => "users#new"
   post "/users" => "users#create"
 
-  # delete "/logout" => "sessions#destroy", as: "logout"
-  # resources :users, only: [:new, :create]
-  # resources :sessions, only: [:create]
+  get "/auth/:provider/callback" => "sessions#create_from_omniauth"
+  # get 'auth/failure', to: redirect('/')
 
+  resources :listings
+
+
+  
 
 end

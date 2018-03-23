@@ -1,18 +1,28 @@
 # require bcrypt
 
 class User < ApplicationRecord
-  # include Bcrypt
 
   has_secure_password
+  has_many :authentications, dependent: :destroy
+  has_many :listings
 
 
-  # def password
-  #   @password ||= Password.new(password_hash)
-  # end 
 
-  # def password=(new_password)
-  #   @password = Password.create(new_password)
-  #   self.password_hash = @password
-  # end
+  def self.create_with_auth_and_hash(authentication, auth_hash)
+   user = self.create!(
+     first_name: auth_hash["info"]["first_name"],
+     last_name: auth_hash["info"]["last_name"],
+     email: auth_hash["info"]["email"],
+     password_digest: SecureRandom.hex(10)
+   )
+   user.authentications << authentication
+   return user
+  end
 
+ # grab fb_token to access Facebook for user data
+ def google_token
+   x = self.authentications.find_by(provider: 'google')
+   return x.token unless x.nil?
+ end
+ 
 end
