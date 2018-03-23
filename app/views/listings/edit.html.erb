@@ -1,0 +1,16 @@
+Edit Page
+
+<br>
+
+<%= render '/listings/display' %>
+
+
+ <%= form_for @listing do |f| %>
+
+ <%= render partial: '/listings/form', :locals => {:f => f } %>
+
+  
+  <div><%= f.submit %></div>
+  
+ <% end %>
+
