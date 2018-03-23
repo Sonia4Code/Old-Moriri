@@ -1,0 +1,37 @@
+<%= form_tag listings_search_path, method: :get do %> 
+  
+  <h7>Country </h7>
+    <%= text_field_tag :country, params[:country] %>
+  
+  <h7>City </h7>
+    <%= text_field_tag :location, params[:location] %>
+   
+  <%= submit_tag "Search", name: nil %>
+<% end %>
+
+
+<div class="d-flex align-items-center align-content-stretch flex-wrap">
+    <% @listings.each do |listing| %>
+    <div class="card listing-card stretch" >
+      <div class="card-body">
+        <h5 class="card-title"></h5>
+        <%= listing.country %>
+        <%= listing.location %>
+        <%#= user.first_name %>
+      </div>
+    </div>
+<% end %>
+</div>
+
+<div class="container">
+  <% @listings.each do |listing| %>  
+    <div class="card">
+      <div class="card-body">
+        <h5><%= link_to listing.title ,listing_path(listing) %></h5>
+        <%= listing.country %>
+        <%= listing.location %>
+      </div>
+    </div>
+  <% end %>
+</div>
+

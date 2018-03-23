@@ -1,0 +1,37 @@
+<!-- NEW & EDIT FORM -->
+<%#= form_for @listing do |f| %>
+
+
+<%= f.label :country %>:
+<%= f.text_field :country %>
+<br>
+<%= f.label :location %>:
+<%= f.text_field :location %>
+<br>
+<%= f.label :title %>:
+<%= f.text_field :title %>
+<br>
+<%= f.label :description %>:
+<%= f.text_field :description %>
+<br>
+<div>
+<%= f.label :speciality %>: 
+<br>
+Relaxed Hair    <%= f.check_box :speciality, {multiple: true}, "Relaxed Hair", nil %>
+Natural Hair    <%= f.check_box :speciality, {multiple: true}, "Natural Hair", nil %>
+<br>
+Weaves          <%= f.check_box :speciality, {multiple: true}, "Weaves", nil %>
+Cornrows        <%= f.check_box :speciality, {multiple: true}, "Cornrows", nil %>
+<br>
+Braids          <%= f.check_box :speciality, {multiple: true}, "Braids", nil %>
+Micro Braids    <%= f.check_box :speciality, {multiple: true}, "Micro Braids", nil %>
+<br>
+Dreadlocs       <%= f.check_box :speciality, {multiple: true}, "Dreadlocs", nil %>
+Faux Locs       <%= f.check_box :speciality, {multiple: true}, "Faux Locs", nil %>
+<br>
+Crochet Braids  <%= f.check_box :speciality, {multiple: true}, "Crochet Braids", nil %>
+Twists          <%= f.check_box :speciality, {multiple: true}, "Twists", nil %>
+<div>
+
+<%#= f.submit %>
+<%# end %>
