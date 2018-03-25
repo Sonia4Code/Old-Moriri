@@ -21,7 +21,7 @@
     </style>
   </head>
   <body>
-    <h3>My Google Maps Demo</h3>
+    <h3>Stylist's Page</h3>
     
 <div class="wrapper">
   <div class= "container margin-bot">
@@ -30,11 +30,12 @@
         <div class="card w-100 mt-5" style = " padding: 2%">
           <div class="doctor_profile">
             <h1><%= @listing.title %></h1>
-            <%= @listing.country %>
-            <%= @listing.location %> 
+            <p>Country: <%= @listing.country %></p>
+            <p>Location: <%= @listing.location %> </p>
+            <p><%= @listing.speciality * "," %></p>
             <span>
-            <%= button_to "Edit", edit_listing_path(@listing), :method => "get" %>
-            <%= button_to "delete", @listing, :method => "delete" %>
+            <%= button_to "Edit", edit_listing_path(@listing), :method => "get", class:"btn btn-primary" %>
+            <%= button_to "Delete", @listing, :method => "delete", class:"btn btn-primary" %>
             </span>           
           </div>
         </div>

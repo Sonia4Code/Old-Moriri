@@ -1,0 +1,8 @@
+console.log("hi");  
+$("#list_list").html("");
+
+$("<%= j render(partial:'display', object: @listings)%>").appendTo("#list_list")
+
+
+
+

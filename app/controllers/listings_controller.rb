@@ -5,6 +5,9 @@ class ListingsController < ApplicationController
 
   def index
     @listings = Listing.all
+
+    # @listings = Listing.order(:created_at).page params[:page]
+
     # @listings = Listing.includes(:user).all
       # filtering_params(params).each do |key, value|
       # @listings = @listings.public_send(key,value) if value.present?
@@ -55,6 +58,12 @@ class ListingsController < ApplicationController
         @listings = @listings.public_send(key, value) if value.present?
         if @listings.empty?
           flash[:notice] = "Sorry there are no results for your search"
+        end
+
+        @listings = @listings.page params[:page]
+
+        respond_to do |format|
+        format.js
         end
       end
   end

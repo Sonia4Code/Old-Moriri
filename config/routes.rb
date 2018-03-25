@@ -3,7 +3,8 @@ Rails.application.routes.draw do
 
   root "welcome#index"
   
-  get "listings/search"
+  post "listings/search" => "listings#search"
+  # get "listings/search"
 
   
   get "/login" => "sessions#new"
@@ -17,6 +18,7 @@ Rails.application.routes.draw do
   # get 'auth/failure', to: redirect('/')
 
   resources :listings
+
 
 
   
