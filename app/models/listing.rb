@@ -1,5 +1,5 @@
 class Listing < ApplicationRecord
-  has_one :user
+  belongs_to :user
 
 
   scope :country, -> (country) { where("country ILIKE ?", "%#{country}%") }
