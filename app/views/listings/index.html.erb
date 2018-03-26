@@ -2,7 +2,7 @@
   <div class="container">
     <div class="row">
       <div class="col">
-        <%= form_tag listings_search_path, method: :post, remote: true do %>
+        <%= form_tag listings_search_path, id: "search-form", method: :post, remote: true do %>
 
          <h7>Country </h7>
           <%= text_field_tag :country, params[:country] %>  
@@ -13,7 +13,7 @@
       </div>
     </div>
   </div>
-  <div class="container mt-5" id="list_list">
+  <div class="container mt-5" id ="search_list" >
     <%= render partial: '/listings/display', object: @listings %>
   </div>
 </main>

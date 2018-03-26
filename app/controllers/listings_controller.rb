@@ -34,6 +34,7 @@ class ListingsController < ApplicationController
 
 
   def show
+    @listing.user
   end
 
   def edit
@@ -59,12 +60,10 @@ class ListingsController < ApplicationController
         if @listings.empty?
           flash[:notice] = "Sorry there are no results for your search"
         end
-
-        @listings = @listings.page params[:page]
-
         respond_to do |format|
         format.js
         end
+        # render json: @listings 
       end
   end
 

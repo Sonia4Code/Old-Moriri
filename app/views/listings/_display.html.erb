@@ -3,12 +3,10 @@
     <%group.each do|listing|%>
       <div class="card  w-50" style = " padding: 2%">
         <div class="card-body" >
-          <h5 class="card-title"><strong> Stylist: </strong><%= link_to listing.title ,listing_path(listing) %></h5>
-          <!-- <h5 class="card-title"><strong> Dr: </strong><%#= "#{doctor.first_name}  #{doctor.last_name}"%></h5> -->
-          <!-- <p class= "card-text"> <strong> Years of experience: </strong><%#= link_to listing.title ,listing_path(listing) %></p>    -->
-          <p class= "card-text"> <strong> Specialties: </strong><%= listing.country %></p>   
+          <h5 class="card-title"><strong> Stylist: </strong><%= listing.user.first_name %> <%= listing.user.last_name %></h5>
+          <p class= "card-text"> <strong> Country: </strong><%= link_to listing.title ,listing_path(listing) %></p>   
+          <p class= "card-text"> <strong> Country: </strong><%= listing.country %></p>   
           <p class= "card-text"> <strong> Location: </strong> <%= listing.location %></p>   
-          <%#= link_to "Contact", doctor_path(doctor), class:"btn btn-primary"%>  
          </div>
       </div>
     <%end%>    

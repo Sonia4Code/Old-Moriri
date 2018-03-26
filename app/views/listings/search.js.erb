@@ -1,8 +1,4 @@
-console.log("hi");  
-$("#list_list").html("");
-
-$("<%= j render(partial:'display', object: @listings)%>").appendTo("#list_list")
-
-
-
-
+// console.log("hi");
+// console.log("<%= @listings %>");
+$("#search_list").html("");
+$("<%= j render(partial:'display', object: @listings)%>").appendTo("#search_list");
