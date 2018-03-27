@@ -10,21 +10,10 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-
-ActiveRecord::Schema.define(version: 20180321110416) do
+ActiveRecord::Schema.define(version: 20180321104543) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
-
-  create_table "authentications", force: :cascade do |t|
-    t.string "uid"
-    t.string "token"
-    t.string "provider"
-    t.bigint "user_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["user_id"], name: "index_authentications_on_user_id"
-  end
 
   create_table "listings", force: :cascade do |t|
     t.string "user_id"
@@ -32,30 +21,28 @@ ActiveRecord::Schema.define(version: 20180321110416) do
     t.string "location"
     t.string "title"
     t.string "description"
+    t.string "business_name"
+    t.integer "contact"
     t.string "speciality", default: [], array: true
     t.string "text", default: [], array: true
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "contact"
-    t.string "business_name"
   end
 
   create_table "sessions", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
     t.string "email"
     t.string "password"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "password_digest"
     t.string "first_name"
     t.string "last_name"
     t.string "email"
+    t.string "password_digest"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
-
-  add_foreign_key "authentications", "users"
 
 end
