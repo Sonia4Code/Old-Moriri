@@ -1,0 +1,13 @@
+<br>
+
+  <div class="row">
+      <div class="card-body" style = " padding: 2%" >
+        <h3>Hi, <%= @listing.user.first_name%> <%= @listing.user.last_name%>!</h3>
+         <h5> Edit your business page: </h5>
+         <br>
+         <%= form_for @listing do |f| %>
+         <%= render partial: '/listings/form', :locals => {:f => f } %>  
+         <div><%= f.submit %></div>  
+         <% end %>
+      </div>
+ </div>
