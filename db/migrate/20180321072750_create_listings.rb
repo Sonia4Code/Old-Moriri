@@ -7,6 +7,8 @@ class CreateListings < ActiveRecord::Migration[5.1]
       t.string   :location
       t.string   :title
       t.string   :description
+      t.string   :business_name
+      t.integer   :contact      
       t.string   :speciality, :text, array:true, default: []
 
 
