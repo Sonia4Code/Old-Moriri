@@ -31,7 +31,6 @@ gem 'jbuilder', '~> 2.5'
 # gem 'bcrypt', '~> 3.1.7'
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
-<<<<<<< HEAD
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 gem 'figaro'
@@ -45,32 +44,16 @@ gem 'omniauth-google-oauth2'
 group :test do
   gem 'rails-controller-testing'
 end
-=======
-
-# Use Capistrano for deployment
-# gem 'capistrano-rails', group: :development
-gem 'figaro'
-
-gem 'bcrypt', '~> 3.1.7'
-
-gem 'omniauth'
-
-gem 'omniauth-google-oauth2'
->>>>>>> 3719eaaa8380150c238ec3f54ca0f5749c221f8b
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
-<<<<<<< HEAD
   gem 'shoulda-matchers', '~> 3.1'
   gem 'selenium-webdriver'
   gem 'rspec-rails', '~> 3.0'
 
-=======
-  gem 'selenium-webdriver'
->>>>>>> 3719eaaa8380150c238ec3f54ca0f5749c221f8b
 end
 
 group :development do
