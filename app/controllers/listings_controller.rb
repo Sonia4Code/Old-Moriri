@@ -9,8 +9,6 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
-    redirect_to new_listing_path(@listing)
-
   end 
 
   def create
