@@ -9,7 +9,8 @@ class ListingsController < ApplicationController
 
   def new
     @listing = Listing.new
-    render template: "listings/new"
+    redirect_to new_listing_path(@listing)
+
   end 
 
   def create
@@ -38,7 +39,7 @@ class ListingsController < ApplicationController
     if @listing.update(listing_params)
       redirect_to @listing
     else
-      render :edit
+      redirect_to edit_listing_path
     end
   end
 
