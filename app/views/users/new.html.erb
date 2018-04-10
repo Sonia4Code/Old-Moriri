@@ -20,6 +20,10 @@
         <br>  
         <%= f.password_field :password %>
         <br>
+        <br>  
+         <%= f.label :role, 'I own a hair busines', :value => 'owner' %>
+         <%= f.radio_button :role, 'owner' %> 
+        <br>
         <br>
         <%= f.submit "Sign Up!",  class: 'btn btn-primary' %>
         <% end %>

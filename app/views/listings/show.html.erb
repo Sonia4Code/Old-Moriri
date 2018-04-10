@@ -22,10 +22,14 @@
             <p><strong>Location: </strong><%= @listing.location %></p>
             <p><strong>Speciality: </strong><%= @listing.speciality * "," %></p>
             <span>
-            <% if current_user == @listing.user %>
+            <% if can? :update, @listing %>
             <%= button_to "Edit", edit_listing_path(@listing), :method => "get", class:"btn btn-primary" %>
+            <% end %>
+
+            <% if can? :destroy, @listing %>
             <%= button_to "Delete", @listing, :method => "delete", class:"btn btn-primary" %>
             <% end %>
+            
             </span>           
           </div>
         </div>
