@@ -3,7 +3,7 @@ class Ability
     def initialize(user)
       user ||= User.new # guest user
       
-      if user.role? :super_admin
+      if user.super_admin?
         can :manage, :all
       else
         can :read, :all
@@ -11,13 +11,12 @@ class Ability
         # can :update, Review do |review|
         #   review.try(:user) == user || user.role?(:client)
       end
-      if user.role?(:owner)
+      if user.owner?
         can :create, Listing
         can :update, Listing do |listing|
         listing.try(:user) == user
         end
       end
-      
+
     end
-  end
 end
