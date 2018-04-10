@@ -5,7 +5,7 @@
         <div>
             <h1><%= link_to listing.business_name, listing_path(listing) %></h1>
             <p>Contact: <%= listing.contact %></p>
-            <p>Owner: <%= listing.user.first_name%> <%= listing.user.last_name%></p>
+            <!-- <p>Owner: <%#= listing.user.first_name%> <%#= listing.user.last_name%></p> -->
             <p>Country: <%= listing.country %></p>
             <p>Location: <%= listing.location %> </p>
             <p>Speciality: <%= listing.speciality * "," %></p>
