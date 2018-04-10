@@ -39,6 +39,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'rails_12factor'
 
+gem 'cancancan', '~> 2.0'
 
 
 group :test do
