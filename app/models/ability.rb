@@ -17,7 +17,7 @@ class Ability
         listing.try(:user) == user
         end
       end
-     end
+      
     end
   end
 end
