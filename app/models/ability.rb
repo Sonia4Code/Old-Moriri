@@ -1,5 +1,6 @@
 class Ability
   include CanCan::Ability
+
     def initialize(user)
       user ||= User.new # guest user
       
@@ -13,10 +14,13 @@ class Ability
       end
       if user.owner?
         can :create, Listing
-        can :update, Listing do |listing|
+        can :update,  Listing do |listing|
         listing.try(:user) == user
         end
-      end
-
+        can :destroy,  Listing do |listing|
+        listing.try(:user) == user
+        end
+        
     end
+  end
 end
