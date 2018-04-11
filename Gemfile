@@ -38,7 +38,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'rails_12factor'
-
+gem 'carrierwave', '~> 1.0'
 gem 'cancancan', '~> 2.0'
 
 
