@@ -11,8 +11,14 @@ Rails.application.routes.draw do
   post "/login" => "sessions#create"
   get "/logout" => "sessions#destroy"
 
+  resources :users, except: [:new, :create, :show] do
+    # resources :reviews
+  end
+
   get "/signup" => "users#new"
-  post "/users" => "users#create"
+  post "/users" => "users#create" 
+  get "/profile" => "users#profile"
+
 
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   # get 'auth/failure', to: redirect('/')

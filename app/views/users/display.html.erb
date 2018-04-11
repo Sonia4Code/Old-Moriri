@@ -1,0 +1,32 @@
+<div class="wrapper">
+  <div class= "container margin-bot">
+    <div class="row">
+      <div class="col-6">
+        <div class="card w-100 mt-5" style = " padding: 2%">
+          <div>
+            <h1><strong><%= @user.first_name %></strong></h1>
+            <p><strong>Location: </strong><%= @user.location %></p>
+            <p><strong>Country: </strong><%= @user.country %></p>
+            <p><strong>Owner: </strong><%= @user.user.first_name%> <%= @user.user.last_name%></p>
+            <p><strong>Contact: </strong><%= @user.contact %></p>
+            <span>
+            <% if can? :update, @listing %>
+            <%= button_to "Edit", edit_listing_path(@listing), :method => "get", class:"btn btn-primary" %>
+            <% end %>
+
+            <% if can? :destroy, @listing %>
+            <%= button_to "Delete", @listing, :method => "delete", class:"btn btn-primary" %>
+            <% end %>
+            
+            </span>           
+          </div>
+        </div>
+      </div>
+      <div class="col-6">
+          <div class="card w-100 mt-5" style = " padding: 2%">
+      <div id="map" class="wrapper-xs"></div>
+      </div>
+    </div>
+    </div>    
+  </div>
+</div>

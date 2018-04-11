@@ -29,6 +29,8 @@ class SessionsController < ApplicationController
       # if: previously already logged in with OAuth
       if authentication.user
         user = authentication.user
+        user.avatar = request.env["omniauth.auth"]["info"]["image"]
+        user.save!
         authentication.update_token(auth_hash)
         @next = root_url
         @notice = "Signed in!"
@@ -44,4 +46,10 @@ class SessionsController < ApplicationController
       redirect_to @next, :notice => @notice
     end
     
+private
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :email, :password, :role, :avatar)
+   end
+
 end
+

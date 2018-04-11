@@ -20,7 +20,9 @@
         <% if current_user %>
       <ul class="nav navbar-nav float-right">      
         <li class="nav-item">      
-            <strong>Signed in as <%= current_user.first_name %></strong>
+            <strong>Welcome <%= current_user.first_name %></strong>
+            <%= image_tag current_user.avatar %>
+           <strong><%= link_to "View Profile", '/profile' %></strong>
         </li>
       </ul>
       <ul class="nav navbar-nav float-left">      
