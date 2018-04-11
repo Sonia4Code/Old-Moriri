@@ -17,9 +17,10 @@
         <div class="card w-100 mt-5" style = " padding: 2%">
           <div>
             <h1><strong><%= @listing.business_name %></strong></h1>
-            <p><strong>Contact: </strong><%= @listing.contact %></p>
-            <p><strong>Country: </strong><%= @listing.country %></p>
             <p><strong>Location: </strong><%= @listing.location %></p>
+            <p><strong>Country: </strong><%= @listing.country %></p>
+            <p><strong>Owner: </strong><%= @listing.user.first_name%> <%= @listing.user.last_name%></p>
+            <p><strong>Contact: </strong><%= @listing.contact %></p>
             <p><strong>Speciality: </strong><%= @listing.speciality * "," %></p>
             <span>
             <% if can? :update, @listing %>
@@ -34,9 +35,11 @@
           </div>
         </div>
       </div>
-      <div class="col-6 card mt-5" style = "padding:2%">
+      <div class="col-6">
+          <div class="card w-100 mt-5" style = " padding: 2%">
       <div id="map" class="wrapper-xs"></div>
       </div>
+    </div>
     </div>    
   </div>
 </div>

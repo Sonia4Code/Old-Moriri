@@ -15,7 +15,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+      render template: "users/new"
+    
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+  end
+
   
+
 private
 
 def user_params
