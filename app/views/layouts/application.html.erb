@@ -1,60 +1,71 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Moriri</title>
-    <%= csrf_meta_tags %>
+<head>
+  <title>Moriri</title>
+  <link href="https://fonts.googleapis.com/css?family=Arvo" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet"> 
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  <%= csrf_meta_tag %>
+</head>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css' %>
+<body>  
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand pull-right pl-3" href="#"><%= link_to(image_tag("logo.png", class: "img-nav"), root_path) %></a>
 
-  </head>
 
-  <body>
-    
-    <nav>
-      <div>
-      <ul class="nav navbar-nav float-left">
-        <li><strong><%= link_to "Moriri", '/' %></strong>|<br></li> 
-      </ul>
-        <% if current_user %>
-      <ul class="nav navbar-nav float-right">      
-        <li class="nav-item">      
-            <strong>Welcome <%= current_user.first_name %></strong>
-            <%= image_tag current_user.avatar %>
-           <strong><%= link_to "View Profile", '/profile' %></strong>
-        </li>
-      </ul>
-      <ul class="nav navbar-nav float-left">      
-        <li class="nav-item">      
-            <%= link_to "Log Out", '/logout' %> |
-            <%= link_to "Listings", '/listings' %> |
-            <%= link_to "New", '/listings/new' %>  |
-            <%= link_to 'Back', :back %>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mx-auto">
+      <li class="nav-item active">
+        <a class="nav-link" id="bname" href='#'><span style="font-family: 'Arvo', serif; font-size: 2em;color:#FBF5F5">Mo</span><span style="font-family: 'Arvo', serif; font-size: 2em;color:#A3A29E">RiRi</span><span class="sr-only">(current)</span></a>
+      </li>
+    </ul>
 
-            <% else %>
-            <%= link_to 'Log In', '/login' %> | <%= link_to 'Sign Up', '/signup' %> |
-            <%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
-          <% end %>
-        </li>
-      </ul>
-      </div>
-    </nav>
-    <br>
-    
- <div id="flash">
-    <% flash.each do |key, value| -%>
-      <% if key == "success"%>
-        <div id="flash_<%= key %>" class="alert alert-success" role="alert"><%=h value %></div>
+    <!-- Dropdown -->
+  <ul>
+  <li class="nav-item dropdown pt-3">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          <span class="navbar-toggler-icon mx-0"><%= image_tag("comb.png", class: "img-drop") %></span>
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <% if current_user %>
+          <span style="color: #FBF5F5"><%= link_to "View Profile", '/profile', class:"dropdown-item" %></span>
+        <span style="color: #FBF5F5"><%= link_to "Listings", '/listings', class:"dropdown-item" %></span>
+        <span style="color: #FBF5F5"><%= link_to "Log Out", '/logout', class:"dropdown-item" %></span>  
       <% else %>
-        <div id="flash_<%= key %>" class="alert alert-danger" role="alert"><%=h value %></div>
+        <span style="color: #FBF5F5"><%= link_to 'Log In', '/login', class:"dropdown-item" %> </span>
+        <span style="color: #FBF5F5"><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:"dropdown-item" %></span>
+        <span style="color: #FBF5F5"><%= link_to 'Sign Up', '/signup', class:"dropdown-item" %></span> 
       <% end %>
-    <% end %>
+      </li>
+    </ul>
+    <!-- Avatar -->
+      <% if current_user %>
+      <a class="navbar-brand pull-right pr-3" href="#"><%= image_tag current_user.avatar , class: "img-nav" %></a>
+      <% else %>
+      <span style="font-family: 'Arvo', serif; font-size: 1em;color:#FBF5F5"> Welcome,Guest! </span>
+      <% end %>
+
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
   </div>
+</nav>
+   
+      
+   <div id="flash">
+      <% flash.each do |key, value| -%>
+        <% if key == "success"%>
+          <div id="flash_<%= key %>" class="alert alert-success" role="alert"><%=h value %></div>
+        <% else %>
+          <div id="flash_<%= key %>" class="alert alert-danger" role="alert"><%=h value %></div>
+        <% end %>
+      <% end %>
+    </div>
 
-
-
-
-      <%= yield %>
-  </body>
+        <%= yield %>
+</body>
 </html>
+
+
+

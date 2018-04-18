@@ -1,0 +1,43 @@
+.navbar{
+  height: 60px;
+  background: #050505;
+}
+
+.img-nav {
+  height: 2.75em;
+  width: 2.75em;
+  border: 1.5px solid white;
+  border-radius: 50%;
+  background: image-url('pattern2.jpeg');
+}
+
+.bname{
+  text-align: center;
+}
+
+img.img-drop {
+  height: 1.5em;
+  width: 1.5em;
+  display: inline-block
+}
+
+.navbar-toggler-icon{
+  height: auto;
+  width: auto;
+  border: 1px solid white;
+  background: image-url('pattern2.jpeg');
+
+}
+
+.dropdown-toggle::after {
+    display: none;
+}
+
+#navbarDropdown,nav-link.dropdown-toggle{
+  list-style: none;
+}
+
+ul, menu, dir {
+    list-style-type: none;
+    display: inline-block
+    }
