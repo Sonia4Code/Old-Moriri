@@ -1,6 +1,5 @@
 class SessionsController < ApplicationController
 
-
   def new
   end
 
@@ -19,7 +18,7 @@ class SessionsController < ApplicationController
   
   def destroy
     reset_session    
-    redirect_to '/login'
+    redirect_to '/'
   end
 
   def create_from_omniauth
@@ -38,8 +37,8 @@ class SessionsController < ApplicationController
       else
         user = User.create_with_auth_and_hash(authentication, auth_hash)
         # you are expected to have a path that leads to a page for editing user details
-        @next = login_path(user)
-        @notice = "User created. Please confirm or edit details"
+        @next = root_url
+        @notice = "User created."
       end
 
       session[:user_id] = user.id
