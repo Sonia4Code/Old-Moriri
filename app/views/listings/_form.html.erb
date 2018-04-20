@@ -1,41 +1,45 @@
-<%= f.label :business_name %>:
-<%= f.text_field :business_name %>
-<br>
-<%= f.label :contact %>:
-<%= f.text_field :contact %>
-<br>
-<!-- <br>
+<div class= 'container-new'>
+<%= f.label :salon, :class => 'form_label' %> <%= f.text_field :business_name, :class => 'form_input' %>
+
+<%= f.label :contact, :class => 'form_label' %> <%= f.text_field :contact, :class => 'form_input' %>
+<!-- 
 <%#= f.label :contact_person %>:
 <%#= f.text_field :contact_person %>
-<br> -->
-<br>
-<%= f.label :country %>:
-<%= f.text_field :country %>
-<br>
-<%= f.label :location %>:
-<%= f.text_field :location %>
-<br>
-<%= f.label :title %>:
-<%= f.text_field :title %>
-<br>
-<%= f.label :description %>:
-<%= f.text_field :description %>
-<br>
-<div>
-<%= f.label :speciality %>: 
-<br>
-Relaxed Hair    <%= f.check_box :speciality, {multiple: true}, "Relaxed Hair", nil %>
-Natural Hair    <%= f.check_box :speciality, {multiple: true}, "Natural Hair", nil %>
-<br>
-Weaves          <%= f.check_box :speciality, {multiple: true}, "Weaves", nil %>
-Cornrows        <%= f.check_box :speciality, {multiple: true}, "Cornrows", nil %>
-<br>
-Braids          <%= f.check_box :speciality, {multiple: true}, "Braids", nil %>
-Micro Braids    <%= f.check_box :speciality, {multiple: true}, "Micro Braids", nil %>
-<br>
-Dreadlocs       <%= f.check_box :speciality, {multiple: true}, "Dreadlocs", nil %>
-Faux Locs       <%= f.check_box :speciality, {multiple: true}, "Faux Locs", nil %>
-<br>
-Crochet Braids  <%= f.check_box :speciality, {multiple: true}, "Crochet Braids", nil %>
-Twists          <%= f.check_box :speciality, {multiple: true}, "Twists", nil %>
-<div>
+ -->
+<%= f.label :country, :class => 'form_label' %> <%= f.text_field :country, :class => 'form_input' %>
+
+<%= f.label :city, :class => 'form_label' %> <%= f.text_field :location, :class => 'form_input' %>
+
+<%= f.label :title, :class => 'form_label' %> <%= f.text_field :title, :class => 'form_input' %>
+
+<%= f.label :description, :class => 'form_label' %> <%= f.text_field :description, :class => 'form_input' %>
+
+
+<table class="table">
+<thead>
+<tr>
+<td id= 'speciality'>
+  <!-- <br> -->
+  <!-- <br> -->
+  <%= f.label :speciality, :class => 'form_label' %>
+  <!-- <br> -->
+  <!-- <br> -->
+</td:>
+<td class= 'speciality'>
+<%= f.check_box :speciality, {multiple: true}, "Braids", nil %>Braids<br>
+<%= f.check_box :speciality, {multiple: true}, "Cornrows", nil %>Cornrows<br>
+<%= f.check_box :speciality, {multiple: true}, "Crochet Braids", nil %>Crochet Braids<br>
+<%= f.check_box :speciality, {multiple: true}, "Dreadlocs", nil %>Dreadlocs<br>
+<%= f.check_box :speciality, {multiple: true}, "Faux Locs", nil %>Faux Locs
+</td>
+<td class= 'speciality'>
+<%= f.check_box :speciality, {multiple: true}, "Micro Braids", nil %>Micro Braids<br>
+<%= f.check_box :speciality, {multiple: true}, "Natural Hair", nil %>Natural Hair<br>
+<%= f.check_box :speciality, {multiple: true}, "Relaxed Hair", nil %>Relaxed Hair<br>
+<%= f.check_box :speciality, {multiple: true}, "Twists", nil %>Twists<br>
+<%= f.check_box :speciality, {multiple: true}, "Weaves", nil %>Weaves
+</td>
+</tr>
+</thead>
+</table>
+</div>
