@@ -1,4 +1,4 @@
-<div id= "bgheader" class="jumbotron jumbotron-fluid mb-0 mr-0" style="height: 150vh;">
+<div id= "bgheader" class="jumbotron jumbotron-fluid mb-0 mr-0 pt-5" style="height: 150vh;">
   <div class="container wrapper-sm">
     <div class="row">
       <div class="col-lg-8 mt-5" style= "text-align: center">
@@ -7,10 +7,10 @@
       <p style="font-family: 'Arvo',serif;font-size: 1.5em;color: black; margin-top: 3%; margin-left: 3%; text-shadow:-1px -1px 0 #575c66, 1px -1px 0 #575c66,-1px 1px 0 #575c66, 1px 1px 0 #575c66; ">Get your hair done all around the world! </p>
 
 
-      <%= link_to "Search Listings", listings_path, class:"btn btn-dark" %>
+      <%= link_to "Search Salons", listings_path, class:"btn btn-dark" %>
 
       <% if can? :create, @listing %>
-      <%= link_to "List your Business", new_listing_path, class:"btn btn-dark" %>
+      <%= link_to "List your Salon", new_listing_path, class:"btn btn-dark" %>
       <% end %>
 
       
@@ -21,4 +21,3 @@
     </div>
   </div>
 </div>
-<div id="scroll-to-1"></div>

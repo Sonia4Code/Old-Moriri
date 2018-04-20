@@ -1,3 +1,39 @@
-// Place all the styles related to the listing controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+div.container-new {
+  border: solid 1px;
+}
+
+
+div.container-fluid{
+  background: image-url('pattern2.jpeg');
+  
+}
+.form_label {
+  width: 25%;
+  padding: 0px 0px 0px 0px;
+  margin-left: 0px;
+  text-align: right;
+  font-weight: bold;
+
+}
+
+.form_input {
+  width: 70%;
+  padding-top: 0px;
+  padding-bottom: 0px;
+}
+
+.thead{
+  width: 100%;
+}
+
+#speciality {
+  width: 25%;
+  text-align: center;
+}
+
+
+.speciality {
+  width: 35%;
+  text-align: left;
+}
+

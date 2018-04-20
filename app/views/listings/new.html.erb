@@ -1,11 +1,10 @@
-<br>
-<div class = "container">
+<div class= "container-fluid" style="width: 500px;">
 <%= form_for @listing do |f| %>
 
  <%= render partial: '/listings/form', :locals => {:f => f } %>
 
   
-  <div><%= f.submit %></div>
+  <div class="mx-auto"><%= f.submit %></div>
   
  <% end %>
 </div>
