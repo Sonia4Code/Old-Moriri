@@ -1,12 +1,3 @@
-div.container-new {
-  border: solid 1px;
-}
-
-
-div.container-fluid{
-  background: image-url('pattern2.jpeg');
-  
-}
 .form_label {
   width: 25%;
   padding: 0px 0px 0px 0px;
@@ -37,3 +28,8 @@ div.container-fluid{
   text-align: left;
 }
 
+#submit {
+  text-align: center;
+  padding-right: 200px;
+  padding-left: 200px;
+}
