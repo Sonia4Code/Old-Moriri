@@ -11,24 +11,26 @@
 
 <body class= "pt-5">  
 <nav class="navbar navbar-expand-lg fixed-top navbar">
-  <a class="navbar-brand pull-right pl-3" href="#"><%= link_to(image_tag("logo.png", class: "img-nav"), root_path) %></a>
+  <a class="navbar-brand pull-right pl-3" href="#"><%= link_to(image_tag("logo.png", class: "img-nav", title: "Home"), root_path) %></a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mx-auto">
       <li class="nav-item active">
         <a class="nav-link" id="bname" href='#'><span style="font-family: 'Arvo', serif; font-size: 2em;color:#FBF5F5">Mo</span><span style="font-family: 'Arvo', serif; font-size: 2em;color:#A3A29E">RiRi</span><span class="sr-only">(current)</span></a>
       </li>
     </ul>
-
     <!-- Dropdown -->
   <ul>
   <li class="nav-item dropdown pt-3">
         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="navbar-toggler-icon mx-0"><%= image_tag("comb.png", class: "img-drop") %></span>
+          <span class="navbar-toggler-icon mx-0"><%= image_tag("comb.png", class: "img-drop", title: "Menu") %></span>
         </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% if current_user %>
           <span style="color: #FBF5F5"><%= link_to "View Profile", '/profile', class:"dropdown-item" %></span>
-        <span style="color: #FBF5F5"><%= link_to "Listings", '/listings', class:"dropdown-item" %></span>
+        <span style="color: #FBF5F5"><%= link_to "Find Salon", '/listings', class:"dropdown-item" %></span>
+        <% if can? :create, @listing %>
+      <%= link_to "List Salon", new_listing_path, class:"dropdown-item" %>
+      <% end %>
         <span style="color: #FBF5F5"><%= link_to "Log Out", '/logout', class:"dropdown-item" %></span>  
       <% else %>
         <span style="color: #FBF5F5"><%= link_to 'Log In', '/login', class:"dropdown-item" %> </span>
@@ -39,7 +41,8 @@
     </ul>
     <!-- Avatar -->
       <% if current_user %>
-      <a class="navbar-brand pull-right pr-3" href="#"><%= image_tag current_user.avatar , class: "img-nav" %></a>
+      <a class="navbar-brand pull-right pr-3"><%= image_tag current_user.avatar , class: "img-nav" %></a>
+      <!-- <a class="navbar-brand pull-right pr-3" href="#"><%#= link_to(image_tag(current_user.avatar, class: "img-nav", title: "My Profle"), profile_path) %></a> -->
       <% else %>
       <span style="font-family: 'Arvo', serif; font-size: 1em;color:#FBF5F5"> Welcome,Guest! </span>
       <% end %>

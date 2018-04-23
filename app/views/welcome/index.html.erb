@@ -7,10 +7,10 @@
       <p style="font-family: 'Arvo',serif;font-size: 1.5em;color: black; margin-top: 3%; margin-left: 3%; text-shadow:-1px -1px 0 #575c66, 1px -1px 0 #575c66,-1px 1px 0 #575c66, 1px 1px 0 #575c66; ">Get your hair done all around the world! </p>
 
 
-      <%= link_to "Search Salons", listings_path, class:"btn btn-dark" %>
+      <%= link_to "Find Salon", listings_path, class:"btn" %>
 
       <% if can? :create, @listing %>
-      <%= link_to "List your Salon", new_listing_path, class:"btn btn-dark" %>
+      <%= link_to "List Salon", new_listing_path, class:"btn" %>
       <% end %>
 
       
