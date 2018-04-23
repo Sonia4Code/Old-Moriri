@@ -23,14 +23,21 @@
             <p><strong>Contact: </strong><%= @listing.contact %></p>
             <p><strong>Speciality: </strong><%= @listing.speciality * "," %></p>
             <span>
-            <% if can? :update, @listing %>
-            <%= button_to "Edit", edit_listing_path(@listing), :method => "get", class:"btn btn-primary" %>
-            <% end %>
-
-            <% if can? :destroy, @listing %>
-            <%= button_to "Delete", @listing, :method => "delete", class:"btn btn-primary" %>
-            <% end %>
-            
+            <div class="row">
+              <div class= "col">
+                <% if can? :update, @listing %>
+                <%= button_to "Edit", edit_listing_path(@listing), :method => "get", class: "btn" %>
+                <% end %>
+              </div>
+              <div class= "col">
+                <% if can? :destroy, @listing %>
+                <%= button_to "Delete", @listing, :method => "delete", class: "btn" %>
+                <% end %>
+              </div>
+              <div class= "col"></div>
+              <div class= "col"></div>
+              <div class= "col"></div>
+            </div>
             </span>           
           </div>
         </div>

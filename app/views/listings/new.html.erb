@@ -1,12 +1,8 @@
 <div class= "container-fluid pt-5" style="width: 500px;">
-<%= form_for @listing do |f| %>
-
- <%= render partial: '/listings/form', :locals => {:f => f } %>
-
-  
-  <div id= "submit"><%= f.submit class: "btn btn-large btn-dark" %></div>
-  
- <% end %>
+  <%= form_for @listing do |f| %>
+    <%= render partial: '/listings/form', :locals => {:f => f } %>
+    <div class= "submit"><%= f.submit "List Salon", class: "btn" %></div>
+  <% end %>
 </div>
 
 

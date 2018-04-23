@@ -41,3 +41,14 @@ ul, menu, dir {
     list-style-type: none;
     display: inline-block
     }
+
+.navcap {
+  display: none;
+  margin-left: 10px;
+  color: white;
+  clear: both;
+}
+
+a:hover+.navcap {
+  display: block;
+}

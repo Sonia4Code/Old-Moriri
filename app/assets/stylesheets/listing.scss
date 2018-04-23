@@ -4,7 +4,6 @@
   margin-left: 0px;
   text-align: right;
   font-weight: bold;
-
 }
 
 .form_input {
@@ -20,16 +19,32 @@
 #speciality {
   width: 25%;
   text-align: center;
+  padding-bottom: 0px;
 }
 
 
 .speciality {
   width: 35%;
   text-align: left;
+  padding-bottom: 0px;
 }
 
-#submit {
+.submit {
   text-align: center;
   padding-right: 200px;
   padding-left: 200px;
+  padding-top: 0px;
+}
+
+input.btn {
+  width: 100px;
+  padding: 0px 0px 0px 0px;
+  background-color: black;
+  color: white;
+}
+
+
+h3 {
+  padding-right: 50px;
+  padding-left: 150px;
 }
