@@ -1,15 +1,18 @@
 <main class="wrapper">
   <div class="container mt-4">
-    <div class="search">
+    <div class="search mt-5">
         <%= form_tag salons_search_path, id: "search-form", method: :post, remote: true do %>
-         <%= text_field_tag :country, params[:country], placeholder: 'Country'%> 
-         <%= text_field_tag :location, params[:location], placeholder: 'City'%> 
-         <%= text_field_tag :suburb, params[:suburb], placeholder: 'Area'%> 
-         <%= submit_tag "Search", name: nil, class:"btn btn-primary" %>
+         <%= text_field_tag :country, params[:country], placeholder: 'Country', class:"search_field" %> 
+         <%= text_field_tag :location, params[:location], placeholder: 'City', class:"search_field" %> 
+         <%= text_field_tag :suburb, params[:suburb], placeholder: 'Area', class:"search_field" %> 
+         <%= submit_tag "Search", name: nil, class:"btn" %>
         <% end %>
     </div>
   </div>
-  <div class="container mt-3" id ="search_list" >
+    <!-- <div class= "page_top mt-3 py-0"><%#= paginate @salons %></div> -->
+  <div class="container mt-4" id ="search_list" >
     <%= render partial: '/salons/display', object: @salons %>
   </div>
+    <div class= "page pt-1"><%= paginate @salons %></div>
+
 </main>
