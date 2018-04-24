@@ -1,8 +1,8 @@
 <div class= "container-fluid" style="width: 500px; padding-top: 25px;">
       <div class="card-body" style = " padding: 2%" >
-        <h3>Hi, <%= @listing.user.first_name%> <%= @listing.user.last_name%>!</h3>
-         <%= form_for @listing do |f| %>
-         <%= render partial: '/listings/form', :locals => {:f => f } %>  
+        <h3>Hi, <%= @salon.user.first_name%> <%= @salon.user.last_name%>!</h3>
+         <%= form_for @salon do |f| %>
+         <%= render partial: '/salons/form', :locals => {:f => f } %>  
          <div class= "submit"><%= f.submit class: "btn btn-large btn-dark" %></div>
          <% end %>
       </div>

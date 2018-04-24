@@ -3,8 +3,8 @@ Rails.application.routes.draw do
 
   root "welcome#index"
   
-  post "listings/search" => "listings#search"
-  # get "listings/search"
+  post "salons/search" => "salons#search"
+  # get "salons/search"
 
   
   get "/login" => "sessions#new"
@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   get "/auth/:provider/callback" => "sessions#create_from_omniauth"
   # get 'auth/failure', to: redirect('/')
 
-  resources :listings
+  resources :salons
 
 
 

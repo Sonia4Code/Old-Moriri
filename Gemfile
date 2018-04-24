@@ -42,6 +42,8 @@ gem 'omniauth-google-oauth2'
 gem 'rails_12factor'
 gem 'carrierwave', '~> 1.0'
 gem 'cancancan', '~> 2.0'
+gem 'kaminari'
+gem 'bootstrap4-kaminari-views'
 
 
 group :test do

@@ -27,9 +27,9 @@
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% if current_user %>
           <span style="color: #FBF5F5"><%= link_to "View Profile", '/profile', class:"dropdown-item" %></span>
-        <span style="color: #FBF5F5"><%= link_to "Find Salon", '/listings', class:"dropdown-item" %></span>
-        <% if can? :create, @listing %>
-      <%= link_to "List Salon", new_listing_path, class:"dropdown-item" %>
+        <span style="color: #FBF5F5"><%= link_to "Find Salon", '/salons', class:"dropdown-item" %></span>
+        <% if can? :create, @salon %>
+      <%= link_to "List Salon", new_salon_path, class:"dropdown-item" %>
       <% end %>
         <span style="color: #FBF5F5"><%= link_to "Log Out", '/logout', class:"dropdown-item" %></span>  
       <% else %>

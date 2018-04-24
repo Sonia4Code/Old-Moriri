@@ -16,25 +16,30 @@
       <div class="col-6">
         <div class="card w-100 mt-5" style = " padding: 2%">
           <div>
-            <h1><strong><%= @listing.business_name %></strong></h1>
-            <p><strong>Location: </strong><%= @listing.location %></p>
-            <p><strong>Country: </strong><%= @listing.country %></p>
-            <p><strong>Owner: </strong><%= @listing.user.first_name%> <%= @listing.user.last_name%></p>
-            <p><strong>Contact: </strong><%= @listing.contact %></p>
-            <p><strong>Speciality: </strong><%= @listing.speciality * "," %></p>
+            <h1><strong><%= @salon.business_name %></strong></h1>
+            <p><strong>Country: </strong><%= @salon.country %></p>
+            <p><strong>Location: </strong><%= @salon.location %></p>
+            <p><strong>Area: </strong><%= @salon.suburb %></p>
+            <p><strong>Address: </strong><%= @salon.address %></p>
+            <p><strong>Contact Person: </strong><%= @salon.contact_person%></p>
+            <p><strong>Contact: </strong>0<%= @salon.contact %></p>
+            <p><strong>Speciality: </strong><%= @salon.speciality * "," %></p>
             <span>
             <div class="row">
               <div class= "col">
-                <% if can? :update, @listing %>
-                <%= button_to "Edit", edit_listing_path(@listing), :method => "get", class: "btn" %>
+                <% if can? :update, @salon %>
+                <%= button_to "Edit", edit_salon_path(@salon), :method => "get", class: "btn" %>
                 <% end %>
               </div>
               <div class= "col">
-                <% if can? :destroy, @listing %>
-                <%= button_to "Delete", @listing, :method => "delete", class: "btn" %>
+                <% if can? :destroy, @salon %>
+                <%= button_to "Delete", @salon, :method => "delete", class: "btn" %>
                 <% end %>
               </div>
-              <div class= "col"></div>
+              <div class= "col">
+                <%#= button_to "View Salons", @salon, :method => "delete", class: "btn" %>
+                <%= link_to "All Salons", '/salons', :method => "get", class: "btn" %>
+              </div>
               <div class= "col"></div>
               <div class= "col"></div>
             </div>
@@ -54,7 +59,7 @@
 <script type="text/javascript">
   function initMap() {
     var geocoder = new google.maps.Geocoder();
-    geocoder.geocode({"address":"<%=@listing.location%>"}, function(result, status){
+    geocoder.geocode({"address":"<%=@salon.address%><%=@salon.location%>"}, function(result, status){
       var map = new google.maps.Map(document.getElementById('map'), {
         zoom: 4, 
         center: result[0].geometry.location
