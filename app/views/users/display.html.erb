@@ -10,12 +10,12 @@
             <p><strong>Owner: </strong><%= @user.user.first_name%> <%= @user.user.last_name%></p>
             <p><strong>Contact: </strong><%= @user.contact %></p>
             <span>
-            <% if can? :update, @listing %>
-            <%= button_to "Edit", edit_listing_path(@listing), :method => "get", class:"btn btn-primary" %>
+            <% if can? :update, @salon %>
+            <%= button_to "Edit", edit_salon_path(@salon), :method => "get", class:"btn btn-primary" %>
             <% end %>
 
-            <% if can? :destroy, @listing %>
-            <%= button_to "Delete", @listing, :method => "delete", class:"btn btn-primary" %>
+            <% if can? :destroy, @salon %>
+            <%= button_to "Delete", @salon, :method => "delete", class:"btn btn-primary" %>
             <% end %>
             
             </span>           

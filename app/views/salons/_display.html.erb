@@ -1,0 +1,16 @@
+<% @salons.in_groups_of(4,false).each do|group| %> 
+  <div class="row">
+    <%group.each do|salon|%>
+      <div class="card  w-25" style = " padding: 2%">
+        <div>
+            <div class= 'sal_head'><h2><%= link_to salon.business_name, salon_path(salon), {:style => 'color: black'} %></h2></div>
+            <p class= 'sal_card'><strong>Country</strong><br><%= salon.country %></p>
+            <p class= 'sal_card'><strong>City</strong><br><%= salon.location %> </p>
+            <p class= 'sal_card'><strong>Area</strong><br><%= salon.suburb %> </p>
+            <p class= 'sal_card'><strong>Speciality</strong><br><%= salon.speciality * "," %></p>
+        </div>
+      </div>
+    <%end%> 
+  </div>
+<%end%>
+
