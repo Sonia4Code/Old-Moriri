@@ -2,9 +2,8 @@ class SalonsController < ApplicationController
 
   before_action :set_salon, only: [:show, :edit, :update, :destroy]
   
-
   def index
-    @salons = Salon.all.order("created_at DESC")
+    @salons = Salon.all.order("created_at DESC").page(params[:page])
   end
 
   def new
@@ -62,7 +61,7 @@ class SalonsController < ApplicationController
 private
 
   def salon_params
-    params.require(:salon).permit(:country, :location, :title, :description, :business_name, :contact,:contact_person, :suburb, :address, speciality:[] )
+    params.require(:salon).permit(:page, :country, :location, :title, :description, :business_name, :contact,:contact_person, :suburb, :address, speciality:[] )
   end
 
   def set_salon

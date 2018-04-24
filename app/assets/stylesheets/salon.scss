@@ -1,3 +1,14 @@
+//* SEARCH BAR *
+.search {
+  text-align:center;
+}
+
+.search_field {
+  border-radius: 5px;
+}
+
+
+// * FORM *
 .form_label {
   width: 25%;
   padding: 0px 0px 0px 0px;
@@ -22,7 +33,6 @@
   padding-bottom: 0px;
 }
 
-
 .speciality {
   width: 35%;
   text-align: left;
@@ -41,10 +51,17 @@ input.btn {
   padding: 0px 0px 0px 0px;
   background-color: black;
   color: white;
+  height: 30px;
 }
 
+
+// * DISPLAY CARD *
 h1 {
   color: black;
+}
+
+.card {
+  border-radius: 10px;
 }
 
 h3 {
@@ -53,9 +70,9 @@ h3 {
 }
 
 .sal_head {
-
   background: image-url('pattern2.jpeg');
   text-align: center;
+  border-radius: 5px;
 }
 
 .sal_card {
@@ -63,16 +80,26 @@ h3 {
 }
 
 
-.search {
-  text-align:center;
+// * PAGINATION *
+a.page-link {
+  background-color: white;
+  border: 0px;
+  color: black;
+  text-align: center;
+  text: 5px;
+  font-weight: bold;
 }
 
-//input#location {
-  //width:200px;
-  //margin-left: 105px;
-//}
+a.page-link:hover {
+  background-color: black;
+  color: white;
+}
 
-//input#suburb {
-  //width:200px;
-  //padding-left: 0px;
-//}
+li.page-item.active a.page-link {
+  background: image-url('pattern2.jpeg');
+  border: 0px;
+  color: black;
+  border-radius: 50%;
+}
+
+

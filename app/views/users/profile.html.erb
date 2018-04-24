@@ -1,12 +1,10 @@
-Welcome <%= current_user.first_name %>!
-
-<br>
-
-
-
-<%= image_tag current_user.avatar %>
-<br>
-<p><%= current_user.first_name %><%= current_user.last_name %></p>
-<br>
-
-
+<main class="wrapper">
+  <div class="container mt-4">
+    <div class= "profile">
+<p>Welcome <%= current_user.first_name %>!</p>
+<p><%= image_tag current_user.avatar %></p>
+<!-- <!-- <p><%#= current_user.first_name %><%#= current_user.last_name %></p> --> 
+</div>
+</div>
+   
+</main>
