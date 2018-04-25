@@ -1,23 +1,23 @@
 require "rails_helper"
 
-RSpec.describe Listing, type: :model do
+RSpec.describe Salon, type: :model do
 
   let(:user) {User.new(first_name: "Ket", last_name: "Chup", email: "ketchup@example.com", password: "sauce")}
-  let(:listing) {Listing.new(location: "Melaka", user_id: user.id)}
+  let(:salon) {Salon.new(location: "Melaka", user_id: user.id)}
 
   context "associations: " do
     it { should belong_to(:user) }
   end
     
   describe "location" do 
-    context "search for listings by location" do
-      it "returns a listing if found" do
+    context "search for salons by location" do
+      it "returns a salon if found" do
         user.save
-        listing.save
-        expect(Listing.location("Melaka").count).to eq(1)
+        salon.save
+        expect(Salon.location("Melaka").count).to eq(1)
       end
-      it "returns a message if no listing is found" do 
-        expect(Listing.location("Kuta").count).to eq(0)
+      it "returns a message if no salon is found" do 
+        expect(Salon.location("Kuta").count).to eq(0)
       end
     end
   end    

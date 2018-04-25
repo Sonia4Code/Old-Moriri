@@ -13,12 +13,12 @@ class Ability
         #   review.try(:user) == user || user.role?(:client)
       end
       if user.owner?
-        can :create, Listing
-        can :update,  Listing do |listing|
-        listing.try(:user) == user
+        can :create, Salon
+        can :update,  Salon do |salon|
+        salon.try(:user) == user
         end
-        can :destroy,  Listing do |listing|
-        listing.try(:user) == user
+        can :destroy,  Salon do |salon|
+        salon.try(:user) == user
         end
         
     end

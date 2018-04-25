@@ -14,7 +14,7 @@ RSpec.describe User, type: :model do
 
   context "associations: " do
     it { should have_many(:authentications) }
-    it { should have_many(:listings) }
+    it { should have_many(:salons) }
   end
 
 

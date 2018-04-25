@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class ListingControllerTest < ActionDispatch::IntegrationTest
+class SalonControllerTest < ActionDispatch::IntegrationTest
   # test "the truth" do
   #   assert true
   # end

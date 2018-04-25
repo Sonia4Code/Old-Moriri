@@ -11,45 +11,43 @@
 
 <body class= "pt-5">  
 <nav class="navbar navbar-expand-lg fixed-top navbar">
-  <a class="navbar-brand pull-right pl-3" href="#"><%= link_to(image_tag("logo.png", class: "img-nav", title: "Home"), root_path) %></a>
+  <a class="navbar-brand pull-right pl-3"><%= link_to(image_tag("logo.png", id: "logo", class: "img-nav", title: "Home"), root_path) %>
+  </a>
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mx-auto">
       <li class="nav-item active">
-        <a class="nav-link" id="bname" href='#'><span style="font-family: 'Arvo', serif; font-size: 2em;color:#FBF5F5">Mo</span><span style="font-family: 'Arvo', serif; font-size: 2em;color:#A3A29E">RiRi</span><span class="sr-only">(current)</span></a>
+        <a class="nav-link" id="bname" href><span style="font-family: 'Arvo', serif; font-size: 2em;color:#FBF5F5">Mo</span><span style="font-family: 'Arvo', serif; font-size: 2em;color:#A3A29E">RiRi</span><span class="sr-only">(current)</span></a>
       </li>
     </ul>
     <!-- Dropdown -->
-  <ul>
-  <li class="nav-item dropdown pt-3">
-        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-          <span class="navbar-toggler-icon mx-0"><%= image_tag("comb.png", class: "img-drop", title: "Menu") %></span>
-        </a>
+    <ul>
+      <li class="nav-item dropdown pt-3">
+        <div class="btn-group dropleft">
+          <a class="nav-link dropdown-toggle" href id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <span class="navbar-toggler-icon">
+              <% if current_user %>
+                <%= image_tag(current_user.avatar, class: "img-nav", id: "avatar", title: "Menu") %>         
+              <% else %> 
+                <span style="font-family: 'Arvo', serif; font-size: 1em;color:#FBF5F5"> Welcome,Guest! </span>
+              <% end %>
+            </span>
+          </a>
         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
           <% if current_user %>
-          <span style="color: #FBF5F5"><%= link_to "View Profile", '/profile', class:"dropdown-item" %></span>
-        <span style="color: #FBF5F5"><%= link_to "Find Salon", '/salons', class:"dropdown-item" %></span>
-        <% if can? :create, @salon %>
-      <%= link_to "List Salon", new_salon_path, class:"dropdown-item" %>
-      <% end %>
-        <span style="color: #FBF5F5"><%= link_to "Log Out", '/logout', class:"dropdown-item" %></span>  
-      <% else %>
-        <span style="color: #FBF5F5"><%= link_to 'Log In', '/login', class:"dropdown-item" %> </span>
-        <span style="color: #FBF5F5"><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:"dropdown-item" %></span>
-        <span style="color: #FBF5F5"><%= link_to 'Sign Up', '/signup', class:"dropdown-item" %></span> 
-      <% end %>
+            <span style="color: #FBF5F5"><%= link_to "My Profile", '/profile', class:"dropdown-item" %></span>
+            <span style="color: #FBF5F5"><%= link_to "Find Salon", '/salons', class:"dropdown-item" %></span>
+              <% if can? :create, @salon %>
+                <%= link_to "List Salon", new_salon_path, class:"dropdown-item" %>
+              <% end %>
+            <span style="color: #FBF5F5"><%= link_to "Log Out", '/logout', class:"dropdown-item" %></span>  
+              <% else %>
+            <span style="color: #FBF5F5"><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:"dropdown-item" %></span>
+            <!-- <span style="color: #FBF5F5"><%#= link_to 'Log In', '/login', class:"dropdown-item" %> </span> -->
+            <!-- <span style="color: #FBF5F5"><%#= link_to 'Sign Up', '/signup', class:"dropdown-item" %></span>  -->
+             <% end %>
+        </div>
       </li>
     </ul>
-    <!-- Avatar -->
-      <% if current_user %>
-      <a class="navbar-brand pull-right pr-3"><%= image_tag current_user.avatar , class: "img-nav" %></a>
-      <!-- <a class="navbar-brand pull-right pr-3" href="#"><%#= link_to(image_tag(current_user.avatar, class: "img-nav", title: "My Profle"), profile_path) %></a> -->
-      <% else %>
-      <span style="font-family: 'Arvo', serif; font-size: 1em;color:#FBF5F5"> Welcome,Guest! </span>
-      <% end %>
-
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
   </div>
 </nav>
 
