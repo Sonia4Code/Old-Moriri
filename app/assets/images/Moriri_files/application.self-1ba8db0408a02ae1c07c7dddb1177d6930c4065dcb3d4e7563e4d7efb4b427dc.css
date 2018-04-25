@@ -10035,7 +10035,7 @@ ul, menu, dir {
   display: inline-block;
 }
 
-/* line 1, /home/nextacademy/moriri/app/assets/stylesheets/listing.scss */
+/* line 1, /home/nextacademy/moriri/app/assets/stylesheets/salon.scss */
 .form_label {
   width: 25%;
   padding: 0px 0px 0px 0px;
@@ -10044,33 +10044,33 @@ ul, menu, dir {
   font-weight: bold;
 }
 
-/* line 9, /home/nextacademy/moriri/app/assets/stylesheets/listing.scss */
+/* line 9, /home/nextacademy/moriri/app/assets/stylesheets/salon.scss */
 .form_input {
   width: 70%;
   padding-top: 0px;
   padding-bottom: 0px;
 }
 
-/* line 15, /home/nextacademy/moriri/app/assets/stylesheets/listing.scss */
+/* line 15, /home/nextacademy/moriri/app/assets/stylesheets/salon.scss */
 .thead {
   width: 100%;
 }
 
-/* line 19, /home/nextacademy/moriri/app/assets/stylesheets/listing.scss */
+/* line 19, /home/nextacademy/moriri/app/assets/stylesheets/salon.scss */
 #speciality {
   width: 25%;
   text-align: center;
   padding-bottom: 0px;
 }
 
-/* line 26, /home/nextacademy/moriri/app/assets/stylesheets/listing.scss */
+/* line 26, /home/nextacademy/moriri/app/assets/stylesheets/salon.scss */
 .speciality {
   width: 35%;
   text-align: left;
   padding-bottom: 0px;
 }
 
-/* line 32, /home/nextacademy/moriri/app/assets/stylesheets/listing.scss */
+/* line 32, /home/nextacademy/moriri/app/assets/stylesheets/salon.scss */
 .submit {
   text-align: center;
   padding-right: 200px;
@@ -10078,14 +10078,14 @@ ul, menu, dir {
   padding-top: 0px;
 }
 
-/* line 39, /home/nextacademy/moriri/app/assets/stylesheets/listing.scss */
+/* line 39, /home/nextacademy/moriri/app/assets/stylesheets/salon.scss */
 input.btn {
   width: 20px;
   padding: 0px 0px 0px 0px;
   color: black;
 }
 
-/* line 45, /home/nextacademy/moriri/app/assets/stylesheets/listing.scss */
+/* line 45, /home/nextacademy/moriri/app/assets/stylesheets/salon.scss */
 h3 {
   padding-right: 50px;
   padding-left: 150px;
