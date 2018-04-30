@@ -1,7 +1,8 @@
 Rails.application.config.middleware.use OmniAuth::Builder do
   
   provider :facebook, ENV['FACEBOOK_APP_KEY'], ENV['FACEBOOK_APP_SECRET'],
-    scope: 'profile',
+    scope: 'public_profile',
+    info_fields: 'first_name,last_name,picture',
     provider_ignores_state: true,
     prompt: 'select_account',
     image_aspect_ratio: 'square',
@@ -16,9 +17,4 @@ Rails.application.config.middleware.use OmniAuth::Builder do
     image_size: 100,
     skip_jwt: true
   
-
-
 end
-
-
-
