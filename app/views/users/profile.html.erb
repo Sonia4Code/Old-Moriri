@@ -1,10 +1,38 @@
-<main class="wrapper">
-  <div class="container mt-4">
-    <div class= "profile">
-<p>Welcome <%= current_user.first_name %>!</p>
-<p><%= image_tag current_user.avatar %></p>
-<!-- <!-- <p><%#= current_user.first_name %><%#= current_user.last_name %></p> --> 
+<div class="wrapper">
+  <div class= "container margin-bot">
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4 mt-5">
+            <p id = "image"><%= image_tag current_user.avatar, :class => 'avatar'%></p>
+      </div>
+      <div class="col-4"></div>
+    </div>
+    <div class="row">
+      <div class="col-4"></div>
+      <div class="col-4">
+        <div class="card w-100 mx-auto">
+          <h1 class = "profile"><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></h1>
+          <p class = "mx-auto mt-0">Joined: <%= current_user.created_at.strftime("%B") %> <%= current_user.created_at.strftime("%Y") %></p>
+
+          <% if current_user.role == "client" %>
+            <p> Are you a salon owner?</p>
+            <%= link_to "Are you a salon owner?", edit_user_path %>
+          <%elsif current_user.salons == nil %>
+            <%= link_to "List your Salon", new_salon_path %>
+          <% else %>
+            <p> You have listed the following salons: </p>
+            <%# @salon.each do|salon| %> 
+            <!-- <p><%#= salon.business_name %></p> -->
+            <%# end %>
+          <% end %>
+
+
+        </div>
+      <div class="col-4"></div>
+    </div>
+    </div>    
+  </div>
 </div>
-</div>
-   
-</main>
+
+
+
