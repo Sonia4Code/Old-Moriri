@@ -46,7 +46,6 @@ gem 'cancancan', '~> 2.0'
 gem 'kaminari'
 gem 'bootstrap4-kaminari-views'
 
-
 group :test do
   gem 'rails-controller-testing'
 end
