@@ -1,5 +1,8 @@
 class UsersController < ApplicationController
 
+  def index
+  end
+  
   def new
     @user = User.new
   end
@@ -20,9 +23,15 @@ class UsersController < ApplicationController
   end
 
   def edit
+    current_user = @salon.user_id
   end
 
   def update
+     if @salon.update(salon_params)
+      redirect_to @salon
+    else
+      redirect_to edit_salon_path
+    end
   end
 
   def destroy
