@@ -23,10 +23,16 @@ class User < ApplicationRecord
    return user
   end
 
- # grab fb_token to access Facebook for user data
- def google_token
-   x = self.authentications.find_by(provider: 'google')
-   return x.token unless x.nil?
- end
+ # grab tokens to access different providers' user info
+  def google_token
+    x = self.authentications.find_by(provider: 'google')
+    return x.token unless x.nil?
+  end
+
+  def fb_token
+    x = self.authentications.find_by(provider: 'facebook')
+    return x.token unless x.nil?
+  end
+
  
 end

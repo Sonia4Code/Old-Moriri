@@ -28,7 +28,7 @@
               <% if current_user %>
                 <%= image_tag(current_user.avatar, class: "img-nav", id: "avatar", title: "Menu") %>         
               <% else %> 
-                <span style="font-family: 'Arvo', serif; font-size: 1em;color:#FBF5F5"> Welcome,Guest! </span>
+                <span style="font-family: 'Arvo', serif; font-size: 1em;color:#FBF5F5"> Welcome, Guest! </span>
               <% end %>
             </span>
           </a>
@@ -42,6 +42,7 @@
             <span style="color: #FBF5F5"><%= link_to "Log Out", '/logout', class:"dropdown-item" %></span>  
               <% else %>
             <span style="color: #FBF5F5"><%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in", class:"dropdown-item" %></span>
+            <span style="color: #FBF5F5"><%= link_to "Sign in with Facebook", "/auth/facebook", id: "sign_in", class:"dropdown-item" %></span>
             <!-- <span style="color: #FBF5F5"><%#= link_to 'Log In', '/login', class:"dropdown-item" %> </span> -->
             <!-- <span style="color: #FBF5F5"><%#= link_to 'Sign Up', '/signup', class:"dropdown-item" %></span>  -->
              <% end %>
