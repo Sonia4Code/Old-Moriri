@@ -3,29 +3,29 @@
     <div class="col"></div>
       <div class="col">
         <h1>Signup</h1>        
-        <%= form_for :user, url: '/users' do |f| %>
-        <%= f.label :first_name %>  
+        <%#= form_for :user, url: '/users' do |f| %>
+        <%#= f.label :first_name %>  
+        <!-- <br>
+        <%#= f.text_field :first_name %>
         <br>
-        <%= f.text_field :first_name %>
+        <%#= f.label :last_name %> 
         <br>
-        <%= f.label :last_name %> 
+        <%#= f.text_field :last_name %>
         <br>
-        <%= f.text_field :last_name %>
+        <%#= f.label :email %> 
         <br>
-        <%= f.label :email %> 
+        <%#= f.text_field :email %>
         <br>
-        <%= f.text_field :email %>
-        <br>
-        <%= f.label :password %>  
+        <%#= f.label :password %>  
         <br>  
-        <%= f.password_field :password %>
+        <%#= f.password_field :password %>
         <br>
-        <br>  
+        <br>   -->
          <%= f.label :role, 'I own a hair busines', :value => 'owner' %>
          <%= f.radio_button :role, 'owner' %> 
         <br>
         <br>
-        <%= f.submit "Sign Up!",  class: 'btn btn-primary' %>
+        <%= f.submit "Save!",  class: 'btn btn-primary' %>
         <% end %>
       </div>
     <div class="col"></div>

@@ -6,7 +6,7 @@ class User < ApplicationRecord
   validates :email, presence: true
 
   has_many :authentications, dependent: :destroy
-  has_many :listings
+  has_many :salons
 
   enum role: [:client, :owner, :super_admin]
 
