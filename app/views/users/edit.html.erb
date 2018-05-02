@@ -1,8 +1,7 @@
+Edit page
 
-
-
-<%= form_for @salon do |f| %>
-  <%= f.label :role, 'I own a hair busines', :value => 'owner' %>
-  <%= f.radio_button :role, 'owner' %> 
-  <div class= "submit"><%= f.submit class: "btn btn-large btn-dark" %></div>
+<%= form_for current_user do |f| %>
+<%= f.label :role, 'I own a hair busines', :value => 'owner' %>
+<%= f.radio_button :role, 'owner' %> 
+<div class= "submit"><%= f.submit class: "btn btn-large btn-dark" %></div>
 <% end %>

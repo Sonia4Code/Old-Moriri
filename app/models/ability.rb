@@ -15,10 +15,10 @@ class Ability
       if user.owner?
         can :create, Salon
         can :update,  Salon do |salon|
-        salon.try(:user) == user
+        # salon.try(:user) == user
         end
         can :destroy,  Salon do |salon|
-        salon.try(:user) == user
+        # salon.try(:user) == user
         end
         
     end

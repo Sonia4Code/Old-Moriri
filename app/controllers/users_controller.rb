@@ -19,20 +19,22 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+def show
+  @user = User.find(params[:id])
+  @salon = @user.salons
+end
 
+  def profile
+    @salons = current_user.salons
   end
 
   def edit
-    @user = current_user
+    render template: "users/edit"
   end
 
   def update
-     if @user.update(user_params)
-      redirect_to @user
-    else
-      redirect_to edit_user_path
-    end
+    current_user.update(user_params)
+      redirect_to '/profile'
   end
 
   def destroy
@@ -43,7 +45,7 @@ class UsersController < ApplicationController
 private
 
 def user_params
-params.require(:user).permit(:first_name, :last_name, :email, :password, :role, :avatar)
+params.require(:user).permit(:id, :first_name, :last_name, :email, :password, :role, :avatar)
 end
 
 end

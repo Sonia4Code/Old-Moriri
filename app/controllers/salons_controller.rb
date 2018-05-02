@@ -22,10 +22,7 @@ class SalonsController < ApplicationController
       end
   end   
 
-
-
   def show
-    @salon.user
   end
 
   def edit

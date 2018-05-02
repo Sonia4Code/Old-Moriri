@@ -13,20 +13,35 @@
         <div class="card w-100 mx-auto">
           <h1 class = "profile"><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></h1>
           <p class = "mx-auto mt-0">Joined: <%= current_user.created_at.strftime("%B") %> <%= current_user.created_at.strftime("%Y") %></p>
-
-          <% if current_user.role == "client" %>
-            <p> Are you a salon owner?</p>
-            <%= link_to "Are you a salon owner?", edit_user_path %>
-          <%elsif current_user.salons == nil %>
-            <%= link_to "List your Salon", new_salon_path %>
+          <div>
+            <% if current_user.role == "client" %>
+              <div class = "row">
+                <div class = "col">
+                  <%#= link_to "Are you a salon owner?", edit_profile_path %>
+                  <%= form_for current_user do |f| %>
+                  I own a salon:   
+                </div>
+                <div class = "col">
+                  <!-- <%#= f.check_box :role, {multiple: true}, "Yes", nil %>Yes<br> -->
+                  <%= f.label :role, 'Yes', :value => 'owner' %>
+                  <%= f.radio_button :role, 'owner' %> 
+                  <%= f.label :role, 'No', :value => 'client' %>
+                  <%= f.radio_button :role, 'client' %> 
+                </div>
+                <div class = "col">
+                  <%= f.submit "Update", class: "btn btn-large btn-dark" %>
+                </div>
+              <div>
+            <% end %>
+            <div class = "row">
           <% else %>
+          <%# elsif current_user.role == "owner" || "super_admin" %>
+            <%= link_to "List your Salon", new_salon_path %>
             <p> You have listed the following salons: </p>
-            <%# @salon.each do|salon| %> 
-            <!-- <p><%#= salon.business_name %></p> -->
-            <%# end %>
+              <% @salons.each do |salon| %>
+              <%= salon.business_name %>
+              <% end %>
           <% end %>
-
-
         </div>
       <div class="col-4"></div>
     </div>
