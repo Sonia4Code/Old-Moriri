@@ -20,17 +20,18 @@ class UsersController < ApplicationController
   end
 
   def show
+
   end
 
   def edit
-    current_user = @salon.user_id
+    @user = current_user
   end
 
   def update
-     if @salon.update(salon_params)
-      redirect_to @salon
+     if @user.update(user_params)
+      redirect_to @user
     else
-      redirect_to edit_salon_path
+      redirect_to edit_user_path
     end
   end
 
