@@ -9,6 +9,19 @@
 
 
 // * FORM *
+
+div.container-new {
+  border-radius: 10px;
+  border: 1px solid rgba(0, 0, 0, 0.125)
+}
+
+div.header {
+  background: image-url('pattern2.jpeg');
+  height: 40px;
+  padding-top: 0px;
+  text-align: center;
+  }
+
 .form_label {
   width: 25%;
   padding: 0px 0px 0px 0px;

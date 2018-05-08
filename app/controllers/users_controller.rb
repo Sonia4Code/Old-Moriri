@@ -26,6 +26,7 @@ end
 
   def profile
     @salons = current_user.salons
+    @salon = Salon.new
   end
 
   def edit
