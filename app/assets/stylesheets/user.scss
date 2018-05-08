@@ -12,4 +12,96 @@
 
 .profile {
   background: image-url('pattern2.jpeg');
+  border-radius: 10px;
+}
+
+#prolist {
+  text-align:center;
+}
+
+button.btn {
+  background-color: black;
+  border: solid 1px grey;
+  color: grey;
+  font-weight: bold;
+}
+
+button.btn:onclick {
+  background: image-url('pattern2.jpeg');
+  color: black;
+}
+
+button.btn:active {
+  background: image-url('pattern2.jpeg');
+  color: black;
+}
+
+#listed {
+  text-align: center;
+}
+
+
+// *FORM* 
+
+div.modal-header {
+  background: image-url('pattern2.jpeg');
+  height: 40px;
+  padding-top: 0px;
+  text-align: center;
+  }
+
+h2.modal-dialog {
+  vertical-align: center;
+  font-weight: bold;
+  position: relative;
+  length: 598px;
+  height: 4em;
+  margin-top: 3px;
+  margin-left: 190px;
+  overflow-y: visible;
+  padding-left: 30px;
+}
+
+label#special.form_label {
+  width: 5em;
+}
+
+table {
+  background: image-url('pattern2.jpeg');
+  margin: 0px 0px 0px 0px;
+}
+
+div.modal-body {
+  margin: 5px 0px 0px 0px;
+  padding: 0px 0px 0px 0px;
+  border-radius: 20px;
+}
+
+button.btn {
+  background-color: black;
+  border: solid 1px grey;
+  color: grey;
+  font-weight: bold;
+}
+
+input#submit {
+  background-color: black;
+  color: grey;
+  border-radius: 5px;
+  border: none;
+}
+
+button.close {
+  z-index: 1;
+}
+
+.submit {
+  text-align: center;
+  margin-bottom: 5px;
+  margin-top: 0px;
+  padding-top: 0px;
+}
+
+td.speciality {
+  padding-bottom: 0px;
 }

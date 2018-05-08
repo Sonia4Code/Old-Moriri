@@ -1,7 +1,10 @@
 <div class= "container-fluid pt-5" style="width: 500px;">
-  <%= form_for @salon do |f| %>
-    <%= render partial: '/salons/form', :locals => {:f => f } %>
-    <div class= "submit mt-0 pt-0"><%= f.submit "List Salon", class: "btn" %></div>
+  <div class="modal-header">
+    <h2 class="modal-dialog modal-lg">New Salon</h2>
+  </div>
+    <%= form_for @salon do |f| %>
+      <%= render partial: '/salons/form', :locals => {:f => f } %>
+      <div class= "submit mt-0 pt-0"><%= f.submit "List Salon", class: "btn" %></div>
   <% end %>
 </div>
 
