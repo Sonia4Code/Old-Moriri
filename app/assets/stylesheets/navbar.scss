@@ -1,17 +1,21 @@
 .navbar{
-  height: 60px;
+  height: 100%;
+  max-height: 60px;
   background: #050505;
   width: auto;
 }
 
 #navbarSupportedContent.collapse.navbar-collapse{
-  height: 60px;
+  height: 100%;
+  max-height: 60px;
   width: 100%;
 }
 
 .img-nav {
-  height: 3.5em;
-  width: 3.5em;
+  height: 100%;
+  max-height:3.5em;
+  width: 100%;
+  max-width: 3.5em;
   border: 0.1em solid white;
   border-radius: 50%;
   background: image-url('pattern2.jpeg');
