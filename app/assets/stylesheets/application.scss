@@ -5,3 +5,32 @@
 @import "user";
 
 
+* {
+    box-sizing: border-box;
+}
+
+p {
+  font-family: Arvo, Open-Sans, Lato;
+}
+
+h1,h2,h3,h4,h5,h6,h7,h8 {
+  font-family: Arvo, Open-Sans, Lato;
+}
+
+
+label.form_label {
+  font-family: Arvo, Open-Sans, Lato;
+}
+
+td.speciality {
+  font-family: Arvo, Open-Sans, Lato;
+}
+
+
+a.dropdown-item {
+  font-family: Arvo, Open-Sans, Lato;
+}
+
+.search_field {
+  font-family: Arvo, Open-Sans, Lato;
+}

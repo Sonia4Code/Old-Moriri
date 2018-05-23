@@ -63,7 +63,8 @@ h2.modal-dialog {
 }
 
 label#special.form_label {
-  width: 5em;
+  width: 100%;
+  max-width: 5em;
 }
 
 table {

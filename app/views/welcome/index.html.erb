@@ -6,9 +6,8 @@
       
       <p style="font-family: 'Arvo',serif;font-size: 1.5em;color: black; margin-top: 3%; margin-left: 3%; text-shadow:-1px -1px 0 #575c66, 1px -1px 0 #575c66,-1px 1px 0 #575c66, 1px 1px 0 #575c66; ">Get your hair done all around the world! </p>
 
-
         <%= form_tag salons_search_path, id: "search-form", method: :post do %>
-         <%= text_field_tag :location, params[:location], placeholder: 'City', class:"search_field" %> 
+         <%= text_field_tag :location, params[:location], placeholder: ' City', class:"search_field" %> 
          <%= submit_tag "Find Salon", name: nil, class:"btn" %>
         <% end %>
 
@@ -18,10 +17,9 @@
       <%#= link_to "List Salon", new_salon_path, class:"btn mt-2" %>
       <%# end %>
 
-      
       </div>
-      <div class="col-lg-4 mt-4">
-        <%= image_tag("logo.png", height: '15%') %>
+      <div class="col-lg-4 mt-4 ml-0 pl-0">
+        <%= image_tag("logo.png", height: '15%', class: 'logo') %>
       </div>
     </div>
   </div>
